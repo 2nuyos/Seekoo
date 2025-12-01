@@ -250,7 +250,7 @@ main{ position:relative; }
     transform: translateY(-3vh) scale(1);
   }
 }
-/* ===== SECTION 2 캔버스 ===== */
+/* ===== SECTION 2 캔버스 수정 부분 ===== */
 
 .s2 {
   display: flex;
@@ -278,7 +278,7 @@ main{ position:relative; }
 .s2 .bubble--21 {
   left: 4.89%;
   top: 8.96%;
-  width: 40.94%; /* ← 기존 43.09%에서 5% 추가 축소 */
+  width: 40.94%;
   z-index: 1;
 }
 
@@ -286,18 +286,31 @@ main{ position:relative; }
 .s2 .bubble--22 {
   left: 33.49%;
   top: 16.11%;
-  width: 36.79%; /* ← 기존 35.57%에서 5% 추가 축소 */
+  width: 36.79%;
   z-index: 5;
 }
 
-/* 이미지23 (bg_23) */
+/* 이미지23 (bg_23) - 수정됨 */
+/* x: 1029.67 -> 53.63% */
+/* y: 35.62 -> 3.30% */
+/* w: 1002.7 -> 52.22% */
 .s2 .bubble--23 {
-  left: 44.00%;
-  top: 3.29%;
-  width: 50.78%; /* ← 기존 58.72%에서 5% 추가 축소 */
+  left: 53.63%;
+  top: 3.30%;
+  width: 45.22%;
   z-index: 3;
 }
 
+/* 이미지23-1 (bg_23-1) - 신규 추가 */
+/* x: 844.97 -> 44.01% */
+/* y: 768.57 -> 71.16% */
+/* w: 480.63 -> 25.03% */
+.s2 .bubble--23-1 {
+  left: 47.01%;
+  top: 69.16%;
+  width: 25.03%;
+  z-index: 4; /* 23번 위에, 22번 아래 정도의 레벨 */
+}
 
 .s2 .bubble--text {
   position: absolute;
@@ -305,9 +318,8 @@ main{ position:relative; }
   top: 80.37%;
   width: 67.29%;
   height: auto;
-  z-index: 12; /* 가장 위에 올라오도록 */
+  z-index: 12;
 }
-
 @media (max-width: 768px) and (orientation: portrait) {
   .s2{
     padding: 0;
@@ -1236,20 +1248,20 @@ font-family: "Almarai";
 
   <div class="s2-canvas">
 
-    <!-- 이미지 21 -->
     <img class="bubble bubble--21 reveal js-reveal"
          src="images/Background/bg_21.png" style="--delay:0ms;">
 
-    <!-- 이미지 22 (맨 위) -->
     <img class="bubble bubble--22 reveal js-reveal"
          src="images/Background/bg_22.png" style="--delay:150ms;">
 
-    <!-- 이미지 23 -->
     <img class="bubble bubble--23 reveal js-reveal"
          src="images/Background/bg_23.png" style="--delay:250ms;">
 
-   <img class="bubble bubble--text reveal js-reveal"
-     src="images/Background/text.png" style="--delay:350ms;">
+    <img class="bubble bubble--23-1 reveal js-reveal"
+         src="images/Background/bg_23-1.png" style="--delay:300ms;">
+
+    <img class="bubble bubble--text reveal js-reveal"
+      src="images/Background/text.png" style="--delay:350ms;">
 
   </div>
 
@@ -1909,3 +1921,7 @@ document.addEventListener("DOMContentLoaded", function () {
 </script>
 </body>
 </html>
+
+위에서bg_23관련 속성없애고 아래 내용 추가해줘
+bg_23->x:1029.67,y:35.62,w:1002.7,h:1002.7
+bg_23-1->x:844.97,y:768.57,w:480.63,h:104
